@@ -1,0 +1,11 @@
+(defun Lista-Recursiva (mi-lista posicion)
+    (setq Asiento (nth posicion mi-lista))
+    (setq Propietario (nth (+ posicion 1 ) mi-lista))
+    (format t "Asiento: ~a  Propietario: ~a~%" Asiento Propietario)
+    (setq tamano (length mi-lista))
+    (if (< (+ posicion 2) tamano)
+        (Lista-Recursiva mi-lista (+ posicion 2))))
+
+(setq mi-lista '( 1 Juan 3 Pedro 4 Luis 5 Pablo 10 Carlos 23 Ana 45 Jorge 56 Maria 78 Javier 34 Isabel 89 Juan 12 Elena 67 Oscar 98 Laura 21 Pedro 43 Sofia 54 Ricardo 76 Carmen 32 Alejandro 65 Andrea 87 Daniel 14 Gabriela 76 Roberto 29 Monica 50 Diego 68 Marta 83 Sergio 19 Paula 35 Victor 92 Natalia 47 Luisa 60 Miguel 74 Raquel 88 Alberto))
+(format t "LISTA COMPLETA.~%")
+(Lista-Recursiva mi-lista 0)
